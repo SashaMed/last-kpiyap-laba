@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Business">
+    <Position X="3" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAEAgAEACBEAAAQAAAAAAAAAQAAggAAAAAAA=</HashCode>
+      <FileName>BusinessHeader.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Employer">
+    <Position X="5.25" Y="2.25" Width="1.5" />
+    <NestedTypes>
+      <Struct Name="Employer::__unnamed_struct_0002_1" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>EmployerHeader.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>BEAEAJAAAEgAAAQCBAAAAYBAAAAABABAAgAkAAAEQAQ=</HashCode>
+      <FileName>EmployerHeader.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Human">
+    <Position X="3" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAEAAAAAABAAEAABABAAEBABAAAAEAAQAAAA=</HashCode>
+      <FileName>Header.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tourist">
+    <Position X="0.75" Y="2.25" Width="1.5" />
+    <NestedTypes>
+      <Struct Name="Tourist::__unnamed_struct_0004_1" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>TouristHeader.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>BAAAAAgCAEQAAAAKACAAAQBAACAABAFAgAAkAAAAAAI=</HashCode>
+      <FileName>TouristHeader.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="tree&lt;valueType&gt;">
+    <Position X="7.25" Y="2.25" Width="1.5" />
+    <NestedTypes>
+      <Class Name="tree&lt;valueType&gt;::node" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>TreeHeader.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>SAAAAAAEgAAAAAECgAAAAAAACAAAAAAAACAgAAACAAA=</HashCode>
+      <FileName>TreeHeader.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InputCheak">
+    <Position X="14" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQEAAAAAAAAAAAAAAAAAgAAAAAAAg=</HashCode>
+      <FileName>ExceptionHeader.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Exception">
+    <Position X="11.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAIAAAIAAABAAABAAAAAAAA=</HashCode>
+      <FileName>ExceptionHeader.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

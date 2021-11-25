@@ -1,0 +1,20 @@
+﻿  BusinessSource.cpp
+D:\education\2 курс\КПИЯП\laba_6\BusinessHeader.h(18,21): warning C4018: <: несоответствие типов со знаком и без знака
+D:\education\2 курс\КПИЯП\laba_6\BusinessHeader.h(40,21): warning C4018: <: несоответствие типов со знаком и без знака
+D:\education\2 курс\КПИЯП\laba_6\BusinessHeader.h(49,21): warning C4018: <: несоответствие типов со знаком и без знака
+D:\education\2 курс\КПИЯП\laba_6\BusinessSource.cpp(6,20): warning C4018: <: несоответствие типов со знаком и без знака
+D:\education\2 курс\КПИЯП\laba_6\BusinessSource.cpp(23,8): warning C4018: >=: несоответствие типов со знаком и без знака
+D:\education\2 курс\КПИЯП\laba_6\BusinessSource.cpp(40,8): warning C4018: >=: несоответствие типов со знаком и без знака
+D:\education\2 курс\КПИЯП\laba_6\BusinessSource.cpp(48,20): warning C4018: <: несоответствие типов со знаком и без знака
+D:\education\2 курс\КПИЯП\laba_6\BusinessSource.cpp(63,20): warning C4018: <: несоответствие типов со знаком и без знака
+  EmployerSource.cpp
+  ExceptionSource.cpp
+D:\education\2 курс\КПИЯП\laba_6\ExceptionSource.cpp(66,22): warning C4018: <: несоответствие типов со знаком и без знака
+  Main.cpp
+D:\education\2 курс\КПИЯП\laba_6\BusinessHeader.h(18,21): warning C4018: <: несоответствие типов со знаком и без знака
+D:\education\2 курс\КПИЯП\laba_6\BusinessHeader.h(40,21): warning C4018: <: несоответствие типов со знаком и без знака
+D:\education\2 курс\КПИЯП\laba_6\BusinessHeader.h(49,21): warning C4018: <: несоответствие типов со знаком и без знака
+D:\education\2 курс\КПИЯП\laba_6\Main.cpp(53,6): warning C4101: n: неиспользованная локальная переменная
+  TouristSource.cpp
+  Создание кода...
+  laba_6.vcxproj -> D:\education\2 курс\КПИЯП\laba_6\Debug\laba_6.exe
