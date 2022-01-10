@@ -2,6 +2,7 @@
 #include<math.h>
 
 
+
 int InputCheak::intInput(istream& in) {
 	bool fl = 0;
 	int temp;
@@ -10,7 +11,6 @@ int InputCheak::intInput(istream& in) {
 			fl = 0;
 			rewind(stdin);
 			in >> temp;
-
 			if (!in) {
 				throw Exception("invalid input");
 			}
@@ -28,6 +28,7 @@ int InputCheak::intInput(istream& in) {
 			fl = 1;
 			cin.clear();
 		}
+		
 
 
 	} while (fl);

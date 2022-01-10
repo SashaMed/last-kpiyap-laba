@@ -4,6 +4,14 @@
 #include"BusinessHeader.h"
 #include"Source.cpp"
 #include"EmployerHeader.h"
+//#include"TreeHeader.h"
+#include"FileHeader.h"
+
+
+bool comp( Employer& obj,  Employer& obj1) {
+	return obj.getRegNum() > obj1.getRegNum();
+
+}
 
 
 void print() {
@@ -48,22 +56,211 @@ int menu(tree<valueType> n, valueType temp) {
 	}
 }
 
+
+Employer choose() {
+	int n;
+	Employer t;
+	string str;
+	cout << "1.reg ad. 2.reg num. 3. pay date. 4. pay sum. 5. all. 6. exit\n";
+
+	cin >> n;
+	while (1) {
+		switch (n) {
+		case 1:
+			cin >> str;
+			t.setRegAd(str);
+			break;
+		case 2:
+			cin >> str;
+			t.setRegNum(str);
+			break;
+		case 3:
+			cin >> str;
+			t.setPayDate(str);
+			break;
+		case 4:
+			cin >> n;
+			t.setPaySum(n);
+			break;
+		case 5:
+			cin >> t;
+		case 6:
+			return t;
+		default:
+			break;
+		}
+	}
+}
+
 int main()
 {
-	int n;
+	const char* empPath = "D:/education/2 êóðñ/ÊÏÈßÏ/laba_8/_employer.txt";
+	const char* touristPath = "D:/education/2 êóðñ/ÊÏÈßÏ/laba_8/_tourist.txt";
+	const char* businessPath = "D:/education/2 êóðñ/ÊÏÈßÏ/laba_8/_business.txt";
+
+
+	const char* binEmpPath = "D:/education/2 êóðñ/ÊÏÈßÏ/laba_8/_binE.txt";
+	const char* binTouristPath = "D:/education/2 êóðñ/ÊÏÈßÏ/laba_8/_binT.txt";
+	const char* binBusinessPath = "D:/education/2 êóðñ/ÊÏÈßÏ/laba_8/_binB.txt";
+
+
+	Employer e;
+	Tourist t;
+	Business b;
+
+
+	tree<Employer> empTree;
+	tree<Tourist> touristTree;
+	tree<Business> businessTree;
+
+
+	TFile<Employer> empFile(empPath);
+	TFile<Tourist> touristFile(touristPath);
+	TFile< Business> businessFile(businessPath);
+
 	
-	Employer emp;
-	Tourist tour;
-	Business bus;
-	cout << "Input variable\n";
-	cin >> emp;
-	//cout << "Input variable\n";
-	//cin >> tour;
-	//cout << "Input variable\n";
-	//cin >> bus;
-	cout << emp << endl;
-	cout << tour << endl;
-	cout << bus << endl;
+	BFile<Employer> empBin(binEmpPath,1);
+	BFile<Tourist> touristBin(binTouristPath,1);
+	BFile< Business> businessBin(binBusinessPath,1);
+
+
+	e.printShapka();
+	while (!empFile.InEof()) {
+		e = empFile.read();
+		if (e.getPaySum() == -1) break;
+		empTree = e;
+		empBin.write(e);
+		cout << e << endl;
+	}
+	empTree.output();
+	empBin.close();
+
+	t.printShapka();
+	while (!touristFile.InEof()) {
+		t = touristFile.read();
+		touristTree = t;
+		touristBin.write(t);
+		cout << t << endl;
+	}
+	touristTree.output();
+	touristBin.close();
+	cout << endl;
+
+	while (!businessFile.InEof()) {
+		b = businessFile.read();
+		businessBin.write(b);
+		cout << b << endl;
+	}
+	businessBin.close();
+
+	BFile<Employer> iempBin(binEmpPath, 2);
+	BFile<Tourist> itouristBin(binTouristPath, 2);
+	BFile< Business> ibusinessBin(binBusinessPath, 2);
+	vector<Employer> stl;
+
+	cout << "From binary file\n";
+	e.printShapka();
+	while (!iempBin.eof()) {
+		e = iempBin.read();
+		if (e.getRegNum() == "")break;
+		stl.push_back(e);
+		cout << e << endl;
+	}
+
+
+
+	iempBin.close();
+	cout << endl;
+	t.printShapka();
+	while (!itouristBin.eof()) {
+		t = itouristBin.read();
+		if (t.getPassNum() == "")break;
+		cout << t << endl;
+	}
+	itouristBin.close();
+
+
+
+	BFile<Employer> aempBin(binEmpPath, 3);
+	BFile<Tourist> atouristBin(binTouristPath, 3);
+	BFile< Business> abusinessBin(binBusinessPath, 3);
+
+
+	int ch = 0;
+	cout << "do u want to write sm to the file?(1 to cont)\n";
+	//cin >> ch;
+	if (ch == 1) {
+
+		while (1) {
+			cout << "1. emp. 2. tourist. 3. business.\n";
+			cin >> ch;
+			switch (ch)
+			{
+			case 1:
+				cout << "input val\n";
+				cin >> e;
+				aempBin.write(e);
+				break;
+			case 2:
+				cout << "input val\n";
+				cin >> t;
+				atouristBin.write(t);
+				break;
+			case 3:
+				cout << "input val\n";
+				cin >> b;
+				abusinessBin.write(b);
+				break;
+			case 4:
+				return 0;
+			default:
+				break;
+			}
+		}
+	}
+	Employer ee;
+	cin >> ee;
+	vector<Employer> cop;
+	stl.insert(stl.begin() + 1, ee);
+	for (int i = 0; i < stl.size(); i++, i++) {
+		cop.push_back(stl[i]);
+	}
+
+
+	/*for (int i = 0; i < stl.size(); i++) {
+		cout << stl[i] <<endl;
+	}*/
+	cout << "output by copy\n";
+	stl[0].printShapka(); 
+	copy(stl.begin(), stl.end(), ostream_iterator<Employer>(cout, "\n"));
+
+	sort(stl.begin(), stl.end(), comp);
+	cout << endl;
+	stl[0].printShapka(); 
+	for (int i = 0; i < stl.size(); i++) {
+		cout << stl.at(i) << endl;
+	}
+
+	cout << "Back elem" << endl;
+	cout << stl.back() << endl;
+	stl.pop_back();
+	cout << "Back elem after pop" << endl;
+	cout << stl.back() << endl;
+
+
+	cout << "Before erase\n";
+	stl[0].printShapka(); 
+	for (int i = 0; i < stl.size(); i++) {
+		cout << stl.at(i) << endl;
+	}
+
+	cout << "After erase\n";
+	stl.erase(stl.begin() + 1, stl.begin() + 3);
+	for (int i = 0; i < stl.size(); i++) {
+		cout << stl.at(i) << endl;
+	}
+
+
 	return 0;
 }
 

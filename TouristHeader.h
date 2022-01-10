@@ -10,9 +10,10 @@ protected:
 		string country;
 	}borderStruct;
 public:
-	Tourist() { passNum = '\0'; borderStruct.date = '\0'; borderStruct.country = '\0'; };
+	Tourist() { passNum = "\0"; borderStruct.date = "\0"; borderStruct.country = "\0"; };
 	Tourist(string pn, string d, string c) { passNum = pn; borderStruct.date = d; borderStruct.country = c; };
-	~Tourist() {};
+	~Tourist() {
+	};
 
 	
 
@@ -32,7 +33,7 @@ public:
 
 
 	void printShapka() {
-		cout << "passNum" << setw(15) << "date" << setw(15) << "country" << endl;
+		cout << setw(15) << "PASS NUM" << setw(15) << "DATE" << setw(15) << "COUNTRY" << endl;
 	};
 
 	friend ostream& operator << (ostream& out, const Tourist obj);
@@ -47,9 +48,32 @@ public:
 	}
 
 	bool operator ==(const Tourist& obj) {
-		if (passNum == obj.passNum &&
+		if (obj.passNum != "\0") {
+			if (passNum != obj.passNum)
+				return false;
+		}
+		if (obj.borderStruct.country != "\0") {
+			if (borderStruct.country != obj.borderStruct.country)
+				return false;
+		}
+		if (obj.borderStruct.date != "\0") {
+			if (borderStruct.date != obj.borderStruct.date)
+				return false;
+		}
+
+		return true;
+		/*if (passNum == obj.passNum &&
 			borderStruct.date == obj.borderStruct.date &&
 			borderStruct.country == obj.borderStruct.country) return true;
-		return false;
+		return false;*/
 	}
+	Tourist choose();
+
+
+	friend ostream& operator << (ofstream& out, const Tourist obj);
+	friend ifstream& operator >> (ifstream& in, Tourist& obj);
+
+	friend fstream& operator << (fstream& out, Tourist& obj);
+	friend fstream& operator >> (fstream& in, Tourist& obj);
+
 };

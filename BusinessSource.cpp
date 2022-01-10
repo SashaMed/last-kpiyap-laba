@@ -44,16 +44,16 @@ void Business::setAddress( string s, int n ) {
 }
 
 ostream& operator << (ostream& out, const Business &obj) {
-	/*int n = obj->buyAddress->length();*/
 	for (int i = 0; i < obj.length; i++) {
-		out << obj.buyAddress[i] << setw(15);
+		out << setw(15) << obj.buyAddress[i] ;
 	}
 	return out;
 }
 
 
 istream& operator >> (istream& in, Business& obj) {
-	int n = obj.buyAddress->length();
+	
+	
 	
 	InputCheak temp;
 	if (obj.buyAddress == nullptr) {
@@ -65,4 +65,6 @@ istream& operator >> (istream& in, Business& obj) {
 	}
 	return in;
 }
+
+
 

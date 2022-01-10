@@ -71,6 +71,26 @@ void tree<valueType>::rec_output(node *ptr) {
 	this->rec_output(ptr->rightptr);
 }
 
+template<typename valueType>
+void tree<valueType>::outputTofile(const char* path) {
+	this->rec_output_to_file(head, path);
+}
+
+template<typename valueType>
+void tree<valueType>::rec_output_to_file(node* ptr, const char *path) {
+	if (!ptr) {
+		return;
+	}
+	TFile<valueType> ob(path);
+	ob.open(path, 3);
+	ob.write(ptr->data);
+	ob.Outclose();
+	rec_output_to_file(ptr->leftptr, path);
+	rec_output_to_file(ptr->rightptr, path);
+	//this->rec_output(ptr->leftptr);
+	//this->rec_output(ptr->rightptr);
+}
+
 
 template<typename valueType>
 bool tree<valueType>::rec_search(valueType n, node *ptr) {
@@ -287,43 +307,4 @@ void tree<valueType>::printSubtree(node* root, const string& prefix)
 	}
 }
 
-//template<typename valueType>
-//void tree<valueType>::menu() {
-//	valueType temp;
-//	while (1) {
-//		print();
-//		cin >> in;
-//		system("cls");
-//		switch (in) {
-//		case 1:
-//			cout << " input value plz\n";
-//			cin >> temp;
-//			n = temp;
-//			break;
-//		case 2:
-//			cout << "\n";
-//			n.output();
-//			cout << "\n";
-//			break;
-//		case 3:
-//			cout << " input value plz\n";
-//			cin >> temp;
-//			n.deleteNode(temp);
-//			break;
-//		case 4:
-//			cout << " input value plz\n";
-//			cin >> temp;
-//			if (n.search(temp)) cout << "true\n";
-//			else cout << "false\n";
-//			break;
-//		case 5:return 0;
-//		default: break;
-//		}
-//	}
-//}
 
-
-//template class tree<int>;
-//template class tree<float>;
-//template class tree<char>;
-//template class tree<a>;

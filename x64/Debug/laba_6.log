@@ -1,0 +1,11 @@
+﻿  Main.cpp
+D:\education\2 курс\КПИЯП\laba_8\Header.h(26,21): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+D:\education\2 курс\КПИЯП\laba_8\BusinessHeader.h(17,21): warning C4018: <: несоответствие типов со знаком и без знака
+D:\education\2 курс\КПИЯП\laba_8\BusinessHeader.h(39,21): warning C4018: <: несоответствие типов со знаком и без знака
+D:\education\2 курс\КПИЯП\laba_8\BusinessHeader.h(49,21): warning C4018: <: несоответствие типов со знаком и без знака
+D:\education\2 курс\КПИЯП\laba_8\BusinessHeader.h(67,21): warning C4018: <: несоответствие типов со знаком и без знака
+D:\education\2 курс\КПИЯП\laba_8\BusinessHeader.h(82,21): warning C4018: <: несоответствие типов со знаком и без знака
+D:\education\2 курс\КПИЯП\laba_8\BusinessHeader.h(76,24): warning C4101: c: неиспользованная локальная переменная
+D:\education\2 курс\КПИЯП\laba_8\BusinessHeader.h(96,21): warning C4018: <: несоответствие типов со знаком и без знака
+D:\education\2 курс\КПИЯП\laba_8\BusinessHeader.h(113,21): warning C4018: <: несоответствие типов со знаком и без знака
+  laba_6.vcxproj -> D:\education\2 курс\КПИЯП\laba_8\x64\Debug\laba_8.exe

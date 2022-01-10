@@ -3,7 +3,16 @@
 #include<string>
 #include <iomanip>
 #include"ExceptionHeader.h"
+#include"FuncuClass.h"
+#include <fstream>
+#include < string.h >
+#include<stdlib.h>
+#include<algorithm>
+#include"TreeHeader.h"
+#include"FileHeader.h"
 
+#define _CRT_SECURE_NO_WARNINGS
+#define SIZE 16
 using namespace std;
 
 /* ласс "„еловек" - им€, фамили€, год рождени€
@@ -12,6 +21,17 @@ using namespace std;
 2. "“урист" - номер паспорта, данные о пересечении границы (дата и страна) - структура
 3. "Ѕизнес" (наследуетс€ от предпринимател€ и туриста) - массив строк со списком адресов где покупали товары
 ¬се классы должны содержать методы доступа и изменени€ всех полей, конструкторы, деструкторы, get, set, перегрузка ввода и вывода*/
+
+void static stringToChar(string iz, char* to) {
+	int len = iz.size();
+	int i = 0;
+	for (i = 0; i < len; i++) {
+		to[i] = iz[i];
+	}
+	to[i] = '\0';
+};
+
+
 
 class Human {
 protected:
